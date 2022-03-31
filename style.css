@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 :root {
   --color1: #0eb40e;
   --color2: #7c7c7c;
@@ -25,8 +32,7 @@ body {
   font-weight: normal;
   /* background-color: #d3cccc; */
   background: #131313;
-  background: -moz-radial-gradient(center, ellipse cover,  var(--color2) 0%, #131313 100%);
-  background: -webkit-radial-gradient(center, ellipse cover,  var(--color2) 0%,#131313 100%);
+  background: -o-radial-gradient(center,  ellipse,  var(--color2) 0%,#131313 100%);
   background: radial-gradient(ellipse at center,  var(--color2) 0%,#131313 100%);
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c7c7c', endColorstr='#131313',GradientType=1 );
@@ -60,13 +66,21 @@ img {
   max-width: 800px;
   margin: 0 auto;
   /* margin-top: 100px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
   border-radius: 10px;
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 1); */
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 1));
+  -webkit-filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 1));
+          filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 1));
 }
 
 .wrap-header {
@@ -77,8 +91,13 @@ img {
 }
 
 .fb-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   padding: 50px 80px;
   color: var(--color2);
@@ -93,13 +112,21 @@ img {
   padding: 0;
   margin-bottom: 20px;
   text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrap-input:last-of-type {
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .wrap-input:last-of-type .fb-form__label{
@@ -145,6 +172,8 @@ img {
 
 .fb-form__input:focus + .border {
   width: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -152,6 +181,8 @@ img {
 .fb-form__area:focus + .border{
   bottom: 2px;
   width: 100%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -165,6 +196,8 @@ img {
   background-color: var(--color3);
   border: none;
   border-radius: 20px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   outline: none;
 }
@@ -172,13 +205,18 @@ img {
 .btn:hover,
 .btn:focus {
   background-color: var(--color1);
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 
 .hidden {
   opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -189,10 +227,13 @@ img {
   background-color: #fff;
   border: 2px solid #000;
   border-radius: 10px;
-  box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 0;
   z-index: -10;
 }
@@ -200,6 +241,8 @@ img {
 .show {
   opacity: 1;
   z-index: 100;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -210,7 +253,9 @@ img {
   }
 
   .wrap-input {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .fb-form__input,
